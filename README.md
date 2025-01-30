@@ -47,6 +47,7 @@ cd ~/debian-hyprland-hyprdots/build-hyprland-and-apps
 >
 > If you dont have pyamdgpuinfo installed
 ```shell
+sudo apt install libdrm-dev
 sudo apt install python3-pip
 pip install pyamdgpuinfo
 ```

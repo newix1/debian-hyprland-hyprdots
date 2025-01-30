@@ -28,6 +28,61 @@ add_to_grub() {
     fi
 }
 
+git clone https://github.com/hyprwm/hyprwayland-scanner
+cd hyprwayland-scanner
+cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
+cmake --build build -j `nproc`
+sudo cmake --install build
+cd ..
+
+git clone https://github.com/hyprwm/hyprutils.git
+cd hyprutils/
+cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf NPROCESSORS_CONF`
+sudo cmake --install build
+cd ..
+
+git clone https://github.com/hyprwm/aquamarine
+cd aquamarine
+cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+sudo cmake --install build
+cd ..
+
+git clone https://github.com/hyprwm/hyprlang
+cd hyprlang
+cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+sudo cmake --install ./build
+cd ..
+
+git clone https://github.com/hyprwm/hyprcursor
+cd hyprcursor
+cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+sudo cmake --install build
+cd ..
+
+git clone https://github.com/hyprwm/hyprgraphics
+cd hyprgraphics/
+cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf NPROCESSORS_CONF`
+sudo cmake --install build
+cd ..
+
+git clone https://github.com/stephenberry/glaze
+cd glaze
+rm -rf build && mkdir -p build
+cd build
+cmake \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+        -DBUILD_TESTING=OFF \
+        -DCMAKE_BUILD_TYPE=Release \
+        -G "Ninja" ..
+ninja
+sudo ninja install
+cd ../..
+
 # Clone and build Hyprland
 git clone --recursive https://github.com/hyprwm/Hyprland
 cd Hyprland || exit

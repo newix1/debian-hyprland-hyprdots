@@ -52,7 +52,7 @@ pip install pyamdgpuinfo
 ```
 > if you got an  #error: externally-managed-environment
 ```shell
-sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+sudo mv /usr/lib/python3.13/EXTERNALLY-MANAGED /usr/lib/python3.13/EXTERNALLY-MANAGED.old
 ```
 
 

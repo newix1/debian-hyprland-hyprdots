@@ -40,7 +40,7 @@ install_packages \
     vim \
     ark \
     zsh \
-    exa \
+    eza \
     qt5-image-formats-plugins \
     qt6-base-dev \
     libpipewire-0.3-dev \

@@ -104,7 +104,8 @@ install_packages \
     libspng-dev \
     libre2-dev \
     libxcursor-dev \
-    liblz4-dev
+    liblz4-dev \
+    parallel
   
 # Install dependencies for wlroots
 sudo apt-get build-dep wlroots

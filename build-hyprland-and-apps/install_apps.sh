@@ -35,7 +35,6 @@ install_packages \
     qt5-style-kvantum \
     qt5ct \
     kitty \
-    neofetch \
     dolphin \
     vim \
     ark \

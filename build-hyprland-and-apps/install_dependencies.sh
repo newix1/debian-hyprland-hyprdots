@@ -79,7 +79,7 @@ install_packages \
     seatd \
     spirv-tools \
     vulkan-validationlayers \
-    vulkan-validationlayers-dev \
+    vulkan-utility-libraries-dev \
     xdg-desktop-portal \
     xdg-desktop-portal-wlr \
     libsystemd-dev \
@@ -95,7 +95,16 @@ install_packages \
     curl \
     psmisc \
     swaylock \
-    imagemagick
+    imagemagick \
+    libpugixml-dev \
+    libzip-dev \
+    librsvg2-dev \
+    libtomlplusplus-dev \
+    libmagic-dev \
+    libspng-dev \
+    libre2-dev \
+    libxcursor-dev \
+    liblz4-dev
   
 # Install dependencies for wlroots
 sudo apt-get build-dep wlroots
